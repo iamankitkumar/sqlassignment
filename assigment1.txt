@@ -1,0 +1,114 @@
+create table teacher
+(
+t_id number(10),
+t_name varchar2(15),
+t_class varchar2(10) 
+);
+desc teacher;
+describe teacher;
+
+select * from teacher;
+
+
+
+
+insert into teacher values(1,'Riya','First_Yr');
+insert into teacher values(2,'Raj','First_Yr');
+insert into teacher values(3,'Pranali','First_Yr');
+insert into teacher values(4,'Rashmi','Third_Yr');
+insert into teacher values(5,'Pranali','First_Yr');
+insert into teacher values(6,'Sonu','First_Yr');
+insert into teacher values(7,'Raani','Second_Yr');
+insert into teacher values(8,'Raji','Third_Yr');
+insert into teacher values(9,'Priya','Second_Yr');
+insert into teacher values(10,'Raj','First_Yr');
+alter table teacher add(t_loc varchar2(15));
+desc teacher;
+
+alter table teacher modify(t_loc varchar2(10));
+desc teacher;
+
+alter table teacher rename column t_loc to t_location;
+
+desc  teacher;
+
+rename teacher to teacher1;
+
+desc teacher;
+desc teacher1;
+
+select * from teacher;
+
+select * from teacher1;
+
+
+update teacher1 set t_location='Kalyan';
+
+select * from teacher1;
+
+alter table teacher1 add(salary number(15));
+
+update teacher1 set salary = 30000 where t_id=1;
+select * from teacher1;
+update teacher1 set salary = 20000 where t_id=2;
+select * from teacher1;
+update teacher1 set salary = 50000 where t_id=3;
+select * from teacher1;
+update teacher1 set salary = 40000 where t_id=4;
+update teacher1 set salary = 50000 where t_id=5;
+update teacher1 set salary = 50000 where t_id=6;
+update teacher1 set salary = 30000 where t_id=7;
+update teacher1 set salary = 20000 where t_id=8;
+update teacher1 set salary = 30000 where t_id=9;
+update teacher1 set salary = 40000 where t_id=10;
+
+select * from teacher1;
+
+select t_name from teacher1 order by t_name desc;
+select * from teacher1;
+select salary from teacher1 order by salary desc;
+select * from teacher1;
+alter table teacher1 add(gender char);
+select * from teacher1;
+
+update teacher1 set gender='f' where t_id=1;
+update teacher1 set gender='m' where t_id=2;
+update teacher1 set gender='f' where t_id=3;
+update teacher1 set gender='f' where t_id=4;
+update teacher1 set gender='f' where t_id=5;
+update teacher1 set gender='m' where t_id=6;
+update teacher1 set gender='f' where t_id=7;
+update teacher1 set gender='f' where t_id=8;
+update teacher1 set gender='f' where t_id=9;
+update teacher1 set gender='m' where t_id=10;
+
+select * from teacher1;
+
+select t_id, t_name from teacher1 where t_id!=6;
+
+select t_name from teacher1 where t_id<>6;
+
+select t_name from teacher1 where salary<30000;
+
+select t_name from teacher1 where salary<=30000;
+
+select t_name from teacher1 where salary>30000;
+
+select t_id,t_name,salary from teacher1 where salary>=30000;
+
+select t_name,salary from teacher1 where salary in(30000,50000);
+
+select * from teacher1;
+select distinct t_calss from teacher1;
+
+select * from teacher1;
+select distinct salary from teacher1;
+
+select * from teacher1;
+
+select * from teacher1 where t_name like 'R%';
+select * from teacher1 where t_name like '%a';
+select * from teacher1 where t_name like '_i%';
+select * from teacher1 where t_name like '%y_';
+select * from teacher1 where t_name like '__y%';
+
